@@ -11,3 +11,6 @@ print(id(int_a), id(str_b), id(set_c), id(lst_d), id(dict_e))
 lst_d.append(4)
 lst_d.append(5)
 print(id(lst_d))
+
+# 3. Define the type of each object from step 1.
+print(type(int_a), type(str_b), type(set_c), type(lst_d), type(dict_e))
