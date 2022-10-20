@@ -14,3 +14,11 @@ print(id(lst_d))
 
 # 3. Define the type of each object from step 1.
 print(type(int_a), type(str_b), type(set_c), type(lst_d), type(dict_e))
+
+# 4*. Check the type of the objects by using isinstance.
+
+print("Is int-a an integer:", isinstance(int_a, int))
+print("Is str_b a string:", isinstance(str_b, str))
+print("Is set_c a set:", isinstance(set_c, set))
+print("Is lst_d a list:", isinstance(lst_d, list))
+print("Is dict_e a dict:", isinstance(dict_e, dict))
