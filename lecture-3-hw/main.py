@@ -1,16 +1,8 @@
-# This is a sample Python script.
+# 1. Define the id of next variables:
+int_a = 55
+str_b = 'cursor'
+set_c = {1, 2, 3}
+lst_d = [1, 2, 3]
+dict_e = {'a': 1, 'b': 2, 'c': 3}
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(id(int_a), id(str_b), id(set_c), id(lst_d), id(dict_e))
