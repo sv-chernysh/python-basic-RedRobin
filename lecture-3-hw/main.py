@@ -16,9 +16,36 @@ print(id(lst_d))
 print(type(int_a), type(str_b), type(set_c), type(lst_d), type(dict_e))
 
 # 4*. Check the type of the objects by using isinstance.
-
 print("Is int-a an integer:", isinstance(int_a, int))
 print("Is str_b a string:", isinstance(str_b, str))
 print("Is set_c a set:", isinstance(set_c, set))
 print("Is lst_d a list:", isinstance(lst_d, list))
 print("Is dict_e a dict:", isinstance(dict_e, dict))
+
+# String formatting:
+# Replace the placeholders with a value:
+# "Anna has ___ apples and ___ peaches."
+
+# 5. With .format and curly braces {}
+print("Anna has {} apples and {} peaches.".format(4, 7))
+
+# 6. By passing index numbers into the curly braces.
+print("Anna has {1} apples and {0} peaches.".format(8, 5))
+
+# 7. By using keyword arguments into the curly braces.
+print("Anna has {apples} apples and {peaches} peaches.".format(apples=6, peaches=9))
+
+# 8*. With indicators of field size (5 chars for the first and 3 for the second)
+print("Anna has {0:5} apples and {1:3} peaches.".format(7, 10))
+
+# 9. With f-strings and variables
+apples = 8
+peaches = 11
+print(f"Anna has {apples} apples and {peaches} peaches.")
+
+# 10. With % operator
+print("Anna has %s apples and %s peaches." % (9, 12))
+
+# 11*. With variable substitutions by name (hint: by using dict)
+data_dict = {"apples": 10, "peaches": 13}
+print("Anna has %(apples)s apples and %(peaches)s peaches." % data_dict)
