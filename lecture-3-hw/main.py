@@ -49,3 +49,29 @@ print("Anna has %s apples and %s peaches." % (9, 12))
 # 11*. With variable substitutions by name (hint: by using dict)
 data_dict = {"apples": 10, "peaches": 13}
 print("Anna has %(apples)s apples and %(peaches)s peaches." % data_dict)
+
+# Comprehensions:
+# (1)
+# lst = []
+# for num in range(10):
+#     if num % 2 == 1:
+#         lst.append(num ** 2)
+#     else:
+#         lst.append(num ** 4)
+# print(lst)
+
+# (2)
+# list_comprehension = [num // 2 if num % 2 == 0 else num * 10 for num in range(10)]
+
+# 12. Convert (1) to list comprehension
+list_comprehension = [num ** 2 if num % 2 == 1 else num ** 4 for num in range(10)]
+print(list_comprehension)
+
+# 13. Convert (2) to regular for with if-else
+lst = []
+for num in range(10):
+    if num % 2 == 0:
+        lst.append(num // 2)
+    else:
+        lst.append(num * 10)
+print(lst)
