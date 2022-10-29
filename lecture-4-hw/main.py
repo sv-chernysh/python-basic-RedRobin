@@ -72,3 +72,55 @@ new_school_bus.school_address('Zhytomyr, Vitruka 132')
 new_school_bus.main_subject('Math')
 new_school_bus.seating_capacity(50)
 new_school_bus.bus_school_color('orange')
+
+
+# 7. Поліморфізм: Створіть два класи: Bear, Wolf. Обидва вони повинні мати метод eat. Створіть два екземпляри: від
+# Ведмідь і від Вовк, створіть із нього кортеж і використовуючи спільну змінну, викличте метод eat.
+class Animal:
+    def __init__(self, name, food):
+        self.name = name
+        self.food = food
+
+    def info(self):
+        print(f"This animal is {self.name}")
+
+    def eat(self):
+        print(f"I eat {self.food}")
+
+
+class Bear(Animal):
+    pass
+
+
+class Wolf(Animal):
+    pass
+
+
+bear = Bear('bear', 'fish')
+wolf = Wolf('wolf', 'rabbits')
+
+animals = (bear, wolf)
+
+for animal in animals:
+    animal.info()
+    animal.eat()
+
+
+# Магічні методи: Додатково: 8*. Створіть клас City з атрибутами екземпляра name i population, сторіть новий
+# екземпляр цього класу, лише коли population > 1500, інакше повертається повідомлення: "Your city is too small".
+# Підказка: використовуєте для цього завдання магічні методи
+
+class City:
+    def __init__(self, name, population):
+        if population > 1500:
+            self.name = name
+            self.population = population
+        else:
+            print("Your city is too small")
+
+
+berezivka = City('Berezivka', 500)
+zhytomyr = City('Zhytomyr', 200000)
+
+print(zhytomyr.name)
+print(zhytomyr.population)
