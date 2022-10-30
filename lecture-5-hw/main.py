@@ -1,3 +1,7 @@
+import dataclasses
+import collections
+
+
 # 1.
 # class Laptop:
 #     """
@@ -93,3 +97,55 @@ class Pasta:
 print(Pasta(["tomato", "cucumber"]).ingredients)
 print(Pasta.carbonara().ingredients)
 print(Pasta.bolognaise().ingredients)
+
+
+# 5*.
+# class Concert:
+#     """
+#     Make class, which has max_visitors_num attribute and its instances will have visitors_count attribute.
+#     In case of setting visitors_count - max_visitors_num should be checked,
+#     if visitors_count value is bigger than max_visitors_num - visitors_count should be assigned with max_visitors_num.
+#     Example:
+#         Concert.max_visitor_num = 50
+#         concert = Concert()
+#         concert.visitors_count = 1000
+#         print(concert.visitors_count)  # 50
+#     """
+class Concert:
+    max_visitors_num = 0
+
+    def __init__(self):
+        self.visitors_count = 0
+
+    def __setattr__(self, key, value):
+        if value > self.max_visitors_num:
+            object.__setattr__(self, key, self.max_visitors_num)
+        else:
+            object.__setattr__(self, key, value)
+
+
+Concert.max_visitors_num = 50
+concert = Concert()
+concert.visitors_count = 1000
+print(concert.visitors_count)
+
+
+# 6.
+# class AddressBookDataClass:
+#     """
+#     Create dataclass with 7 fields - key (int), name (str), phone_number (str), address (str), email (str), birthday (str), age (int)
+#     """
+@dataclasses.dataclass
+class AddressBookDataClass:
+    key: int
+    name: str
+    phone_number: str
+    address: str
+    email: str
+    birthday: str
+    age: int
+
+
+# 7. Create the same class (6) but using NamedTuple
+AddressBookDataClass = collections.namedtuple('AddressBookDataClass', ['key', 'name', 'phone_number', 'address',
+                                                                       'email', 'birthday', 'age'])
