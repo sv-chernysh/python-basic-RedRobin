@@ -180,7 +180,6 @@ print(AddressBook(15, 'Serhii', '+380960000000', 'Zhytomyr', 'some@gmail.com', '
 #     name = "John"
 #     age = 36
 #     country = "USA"
-9.
 
 
 class Person:
