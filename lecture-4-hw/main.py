@@ -111,12 +111,15 @@ for animal in animals:
 # Підказка: використовуєте для цього завдання магічні методи
 
 class City:
-    def __init__(self, name, population):
+    def __new__(cls, name, population, *args, **kwargs):
         if population > 1500:
-            self.name = name
-            self.population = population
+            return super().__new__(cls)
         else:
-            print("Your city is too small")
+            return print("Your city is too small")
+
+    def __init__(self, name, population):
+        self.name = name
+        self.population = population
 
 
 berezivka = City('Berezivka', 500)
@@ -124,3 +127,4 @@ zhytomyr = City('Zhytomyr', 200000)
 
 print(zhytomyr.name)
 print(zhytomyr.population)
+print(berezivka)
